@@ -1,12 +1,11 @@
 #Links :
 #http://download.unity3d.com/download_unity/unity-editor-installer-5.1.0f3+2015082501.sh
-#http://blogs.unity3d.com/2015/08/26/unity-comes-to-linux-experimental-build-now-available/
 
 FROM ubuntu:14.04
 
 MAINTAINER thshaw
 
-ARG PACKAGE
+ARG PACKAGE=unity-editor_amd64-2017.1.0xf3Linux.deb
 ARG VIDEO_GID
 
 RUN apt-get update
@@ -73,6 +72,8 @@ RUN mkdir -p /usr/share/icons/hicolor && \
 	rm -rf /var/lib/apt/lists/*
 
 # add audio support
+RUN apt-get update
+RUN apt-get install -y software-properties-common
 RUN add-apt-repository -y ppa:mc3man/trusty-media
 RUN apt-get update
 RUN apt-get install -y ffmpeg
