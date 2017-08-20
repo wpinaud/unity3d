@@ -2,10 +2,11 @@
 
 # latest Linux releases can be found here:
 # http://forum.unity3d.com/threads/unity-on-linux-release-notes-and-known-issues.350256/#post-2429209
+# http://beta.unity3d.com/download/061bcf22327f/unity-editor_amd64-2017.1.0xf3Linux.deb
 SHELL := /bin/bash
-TAG := 5.3.3f1+20160223
-PKG := unity-editor-$(TAG)_amd64.deb
-URL := http://download.unity3d.com/download_unity/linux/$(PKG)
+TAG := 2017.1.0xf3
+PKG := unity-editor_amd64-$(TAG)Linux.deb
+URL := http://beta.unity3d.com/download/061bcf22327f/$(PKG)
 
 # compatible tag for Docker
 DOCKER_TAG := $(shell echo $(TAG) | sed 's/\+//g')
